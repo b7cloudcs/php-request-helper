@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpRequestHelper\Response;
+namespace PhpRequestHelper;
 
 class Response
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpRequestHelper\Request;
+namespace PhpRequestHelper;
 
 class Request
 {
