@@ -2,5 +2,6 @@
 
 ### install
 ```
-composer require lingan/try-make-package dev-master
+composer require dialogueplay/php-request-helper dev-master
+
 ````
