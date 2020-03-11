@@ -1,0 +1,16 @@
+{
+    "name": "dialogueplay/php-request-helper",
+    "description": "A simple PHP request and response library",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpRequestHelper\\Request\\": "src/PhpRequestHelper/Request",
+            "PhpRequestHelper\\Response\\": "src/PhpRequestHelper/Response"
+        }
+    }
+}
