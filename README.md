@@ -2,6 +2,6 @@
 
 ### install
 ```
-composer require dialogueplay/php-request-helper dev-master
+composer require dialogueplay/php-request-helper
 
 ````

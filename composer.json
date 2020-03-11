@@ -3,7 +3,6 @@
     "description": "A simple PHP request and response library",
     "type": "library",
     "license": "MIT",
-    "minimum-stability": "dev",
     "require": {
         "php": ">=7.0"
     },
