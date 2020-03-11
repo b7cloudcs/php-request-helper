@@ -1,2 +1,6 @@
 # php-request-helper
-just for php request
+
+### install
+```
+composer require lingan/try-make-package dev-master
+````
