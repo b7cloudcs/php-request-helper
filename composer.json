@@ -9,8 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PhpRequestHelper\\Request\\": "src/PhpRequestHelper/Request",
-            "PhpRequestHelper\\Response\\": "src/PhpRequestHelper/Response"
+            "PhpRequestHelper\\": "src/PhpRequestHelper/"
         }
     }
 }
