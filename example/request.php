@@ -53,6 +53,39 @@ pre{
     <?php var_dump_pre(Request::query("param", ["a"=>"b"])); ?>
 </div>
 
+<h2>Input FormData & Json</h2>
+<div class="pre">
+    <p>Request::input($key="name", $defaultValue=[dot hava])</p>
+    <?php var_dump_pre(Request::input("name")); ?>
+</div>
+<div class="pre">
+    <p>Request::input($key="name", $defaultValue=[dot hava])</p>
+    <?php var_dump_pre(Request::input("name")); ?>
+</div>
+<div class="pre">
+    <p>Request::input($key="name", $defaultValue="defaultValue",)</p>
+    <?php var_dump_pre(Request::input("name", "defaultValue")); ?>
+</div>
+
+<h2>Get Query & FormData & Json</h2>
+<div class="pre">
+    <p>Request::get($key="user.0.name", $defaultValue=[dot hava])</p>
+    <?php var_dump_pre(Request::get("user.0.name")); ?>
+</div>
+<div class="pre">
+    <p>Request::get($key="name", $defaultValue=[dot hava])</p>
+    <?php var_dump_pre(Request::get("name")); ?>
+</div>
+<div class="pre">
+    <p>Request::get($key="name", $defaultValue=[dot hava])</p>
+    <?php var_dump_pre(Request::get("name")); ?>
+</div>
+<div class="pre">
+    <p>Request::get($key="name", $defaultValue="defaultValue",)</p>
+    <?php var_dump_pre(Request::get("name", "defaultValue")); ?>
+</div>
+
+
 <h2>Header</h2>
 <div class="pre">
     <p>Request::header($key="User-Agent", $defaultValue=[dot hava])</p>
@@ -95,33 +128,6 @@ pre{
     <?php var_dump_pre(Request::session("ABC", "defaultValue")); ?>
 </div>
 
-<h2>Input FormData & Json</h2>
-<div class="pre">
-    <p>Request::input($key="name", $defaultValue=[dot hava])</p>
-    <?php var_dump_pre(Request::input("name")); ?>
-</div>
-<div class="pre">
-    <p>Request::input($key="name", $defaultValue=[dot hava])</p>
-    <?php var_dump_pre(Request::input("name")); ?>
-</div>
-<div class="pre">
-    <p>Request::input($key="name", $defaultValue="defaultValue",)</p>
-    <?php var_dump_pre(Request::input("name", "defaultValue")); ?>
-</div>
-
-<h2>Get Query & FormData & Json</h2>
-<div class="pre">
-    <p>Request::get($key="name", $defaultValue=[dot hava])</p>
-    <?php var_dump_pre(Request::get("name")); ?>
-</div>
-<div class="pre">
-    <p>Request::get($key="name", $defaultValue=[dot hava])</p>
-    <?php var_dump_pre(Request::get("name")); ?>
-</div>
-<div class="pre">
-    <p>Request::get($key="name", $defaultValue="defaultValue",)</p>
-    <?php var_dump_pre(Request::get("name", "defaultValue")); ?>
-</div>
 
 <br><br><br><br>
 <br><br><br><br>

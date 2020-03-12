@@ -13,10 +13,56 @@ class Request
      */
     static public function query($key, $defaultValue="")
     {
-        return Helper::valueFilter(
-            isset($_GET[$key])? $_GET[$key]: null,
-            $defaultValue
-        );
+        // return
+        return self::subValue($_GET, $key, $defaultValue);
+    }
+
+    /**
+     * input
+     * @param string $key
+     * @param all $defaultValue
+     * @return void
+     */
+    static public function input($key, $defaultValue="")
+    {
+        // Content-Type = application/json
+        $jsonData = json_decode(self::raw(), true);
+        $jsonData = is_array($jsonData)? $jsonData: [];
+
+        // data merge
+        $input = array_merge($jsonData, $_POST, $_FILES);
+
+        // return
+        return self::subValue($input, $key, $defaultValue);
+
+    }
+
+    /**
+     * input raw
+     * @return void
+     */
+    static public function raw()
+    {
+        return file_get_contents('php://input');
+    }
+
+    /**
+     * get
+     * @param string $key
+     * @param all $defaultValue
+     * @return void
+     */
+    static public function get($key, $defaultValue="")
+    {
+        // 同时获取 query 和 input
+        $queryValue = self::query($key, $defaultValue);
+        $inputValue = self::input($key, $defaultValue);
+
+        // 返回不同于默认值的值
+        return ($queryValue != $defaultValue)
+                ? $queryValue
+                : $inputValue;
+
     }
 
     /**
@@ -61,53 +107,26 @@ class Request
         );
     }
 
-    /**
-     * input raw
-     * @return void
-     */
-    static public function raw()
-    {
-        return file_get_contents('php://input');
-    }
 
     /**
-     * input
+     * subValue
+     *
+     * @param [type] $data
      * @param string $key
-     * @param all $defaultValue
+     * @param string $defaultValue
      * @return void
      */
-    static public function input($key, $defaultValue="")
+    static public function subValue($data, $key = "", $defaultValue = "")
     {
-        // Content-Type = application/json
-        $jsonData = json_decode(self::raw(), true);
-        $jsonData = is_array($jsonData)? $jsonData: [];
+        $keys = explode('.', $key);
 
-        // data merge
-        $inputs = array_merge($jsonData, $_POST, $_FILES);
+        // each sub
+        foreach ($keys as $oneKey) {
+            $data = isset($data[$oneKey])? $data[$oneKey]: null;
+        }
 
         // return
-        return Helper::valueFilter(
-            isset($inputs[$key])? $inputs[$key]: null,
-            $defaultValue
-        );
-    }
-
-    /**
-     * get
-     * @param string $key
-     * @param all $defaultValue
-     * @return void
-     */
-    static public function get($key, $defaultValue="")
-    {
-        // 同时获取 query 和 input
-        $queryValue = self::query($key, $defaultValue);
-        $inputValue = self::input($key, $defaultValue);
-
-        // 返回不同于默认值的值
-        return ($queryValue != $defaultValue)
-                ? $queryValue
-                : $inputValue;
+        return Helper::valueFilter($data, $defaultValue);
 
     }
 

@@ -7,7 +7,12 @@ require __DIR__.'/../vendor/autoload.php';
 
 // Uses ..
 use PhpRequestHelper\Helper;
-use PhpRequestHelper\TestObject;
+
+class TestObject
+{
+    public $key1 = "key1";
+    public $key2 = "key2";
+}
 
 function var_dump_pre($mixed = null) {
     echo '<pre>';

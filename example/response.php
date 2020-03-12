@@ -7,7 +7,12 @@ require __DIR__.'/../vendor/autoload.php';
 
 // Uses ..
 use PhpRequestHelper\Response;
-use PhpRequestHelper\TestObject;
+
+class TestObject
+{
+    public $key1 = "key1";
+    public $key2 = "key2";
+}
 
 // json data
 Response::json(["error_code"=>0, "message"=> ""]);
