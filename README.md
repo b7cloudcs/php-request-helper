@@ -42,7 +42,7 @@ var_dump(Request::get("name", "default name"));
 - valueFilter($value, $defaultValue = "") 值过滤器
 - valueBoolFilter($value, $defaultValue = "") 布尔值过滤器，类似字符串形式的 "false"、"0" 和属性形式下的 0 都将被处理为 false
 
-#### 另外支持的新特性
+#### 另外支持的特性
 - Request::get("room.0.name", "default name") 支持通过"." 符号取得数组类型数据的下级内容
 
 
