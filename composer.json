@@ -1,5 +1,5 @@
 {
-    "name": "dialogueplay/php-request-helper",
+    "name": "freebattles/php-request-helper",
     "description": "A simple PHP request and response library",
     "type": "library",
     "license": "MIT",
